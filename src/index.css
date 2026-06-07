@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-white/20 dark:border-gray-700/30;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl shadow-xl;
+  }
+
+  .glass-button {
+    @apply glass rounded-xl px-6 py-3 transition-all duration-300 hover:bg-white/90 dark:hover:bg-gray-800/90;
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-cyan-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  .medical-gradient {
+    @apply bg-gradient-to-br from-primary-500 via-primary-600 to-cyan-600;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-cyan-500;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 border-2 border-primary-200 dark:border-primary-700;
+  }
+
+  .btn-emergency {
+    @apply bg-gradient-to-r from-red-600 to-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 animate-pulse-slow;
+  }
+
+  .card-hover {
+    @apply transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
